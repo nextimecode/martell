@@ -55,6 +55,7 @@
     "typescript": "5.7.2"
   },
   "devDependencies": {
-    "eslint-plugin-perfectionist": "^4.3.0"
+    "eslint-plugin-perfectionist": "^4.3.0",
+    "eslint-plugin-unicorn": "^56.0.1"
   }
 }
