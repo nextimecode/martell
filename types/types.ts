@@ -1,5 +1,8 @@
 import { SVGProps } from "react";
-import { ThemeProviderProps } from "next-themes/dist/types";
+import { ThemeProvider } from 'next-themes';
+import { ComponentProps } from 'react';
+
+type ThemeProviderProps = ComponentProps<typeof ThemeProvider>;
 export interface Movie {
   id: string;
   federateMovie: {

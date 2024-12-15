@@ -48,8 +48,13 @@ async function getMovie(slug: string) {
   return data.data.movie;
 }
 
-export default async function Movie({ params }: { params: { slug: string } }) {
-  const movieData = await getMovie(params.slug);
+export default async function Movie({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const slug = (await params).slug
+  const movieData = await getMovie(slug);
   const playbackId = movieData.moviePlayer.playbackId;
   return (
     <div className="p-10">
