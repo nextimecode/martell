@@ -33,6 +33,8 @@ async function getFeaturedMovies() {
 			  }
 			  id
 			  slug
+        title
+        subtitle
 			  moviePoster {
 				height
 				width
@@ -88,6 +90,8 @@ export default async function Home() {
                   };
                 };
                 slug: string;
+                title: string;
+                subtitle: string;
                 moviePoster: {
                   height: number;
                   width: number;
@@ -96,11 +100,11 @@ export default async function Home() {
               }) => (
                 <MovieCard
                   key={movie.id}
-                  Title={movie.federateMovie.data.Title}
+                  Title={movie.title}
                   Poster={movie.federateMovie.data.Poster}
                   moviePoster={movie.moviePoster}
                   alt={movie.federateMovie.data.Title}
-                  Genre={movie.federateMovie.data.Genre}
+                  Genre={movie.subtitle}
                   Director={movie.federateMovie.data.Director}
                   slug={movie.slug}
                 />
