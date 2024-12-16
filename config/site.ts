@@ -4,18 +4,18 @@ export const siteConfig = {
 	name: "Hygraphlix",
 	description: "A movie streaming platform",
 	navItems: [
-		{
-			label: "Movies",
-			href: "/movies",
-		},
-		{
-			label: "Genres",
-			href: "/genres",
-		},
-		{
-		label: "About",
-		href: "/about",
-		}
+		// {
+		// 	label: "Movies",
+		// 	href: "/movies",
+		// },
+		// {
+		// 	label: "Genres",
+		// 	href: "/genres",
+		// },
+		// {
+		// label: "About",
+		// href: "/about",
+		// }
 	],
 	navMenuItems: [
 		{
@@ -47,9 +47,9 @@ export const siteConfig = {
 			href: "/logout",
 		},
 	],
-	links: {
-		github: "https://github.com/lowisren/hygraph-movie-starter/",
-		twitter: "https://twitter.com/hygraph",
-		docs: "https://hygraph.com/docs",
-	},
+	// links: {
+	// 	github: "https://github.com/lowisren/hygraph-movie-starter/",
+	// 	twitter: "https://twitter.com/hygraph",
+	// 	docs: "https://hygraph.com/docs",
+	// },
 };

@@ -54,11 +54,11 @@ export const Navbar = () => {
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
 					<NextLink className="flex items-center justify-start gap-1" href="/">
-						<Logo />
-						<p className="text-2xl font-bold">HYGRAPHlix</p>
+						{/* <Logo /> */}
+						<p className="text-2xl font-bold">NeXTFANS</p>
 					</NextLink>
 				</NavbarBrand>
-				<ul className="justify-start hidden gap-4 ml-2 lg:flex">
+				{/* <ul className="justify-start hidden gap-4 ml-2 lg:flex">
 					{siteConfig.navItems.map((item) => (
 						<NavbarItem key={item.href}>
 							<NextLink
@@ -73,7 +73,7 @@ export const Navbar = () => {
 							</NextLink>
 						</NavbarItem>
 					))}
-				</ul>
+				</ul> */}
 			</NavbarContent>
 
 			<NavbarContent
@@ -81,21 +81,21 @@ export const Navbar = () => {
 				justify="end"
 			>
 				<NavbarItem className="hidden gap-2 sm:flex">
-					<Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
+					{/* <Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
 						<TwitterIcon className="text-default-500" />
 					</Link>
 					<Link isExternal href={siteConfig.links.github} aria-label="Github">
 						<GithubIcon className="text-default-500" />
-					</Link>
+					</Link> */}
 					<ThemeSwitch />
 				</NavbarItem>
 				<NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
 			</NavbarContent>
 
 			<NavbarContent className="pl-4 sm:hidden basis-1" justify="end">
-				<Link isExternal href={siteConfig.links.github} aria-label="Github">
+				{/* <Link isExternal href={siteConfig.links.github} aria-label="Github">
 					<GithubIcon className="text-default-500" />
-				</Link>
+				</Link> */}
 				<ThemeSwitch />
 				<NavbarMenuToggle />
 			</NavbarContent>
