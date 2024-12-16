@@ -56,11 +56,11 @@ export default function RootLayout({
 							<Link
 								isExternal
 								className="flex items-center gap-1 text-current"
-								href="https://hygraph.com/"
+								href="https://www.nextime.com.br/"
 								title="Hygraph homepage"
 							>
-								<span className="text-default-600">Brought to you by</span>
-								<p className="text-primary">Hygraph</p>
+								<span className="text-default-600">Desenvolvido por</span>
+								<p className="text-primary">NeXTIME</p>
 							</Link>
 						</footer>
 					</div>

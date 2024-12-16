@@ -48,32 +48,32 @@ async function getFeaturedMovies() {
 
 export default async function Home() {
   const movies = await getFeaturedMovies();
-  //console.log(movies);
+  console.log(movies);
   return (
     <>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="justify-center inline-block max-w-lg text-center">
           <h1 className={title({ color: "violet", size: "jumbo" })}>
-            HYGRAPHlix&nbsp;
+            NeXTFANS&nbsp;
           </h1>
           <br />
-          <h2 className={title({ size: "sm" })}>The cinematic wonderland</h2>
-          <h2 className={subtitle({ class: "mt-4" })}>
-            Watch movies with your friends and family
-          </h2>
+          <h2 className={title({ size: "sm" })}>Uma assinatura</h2>
+          {/* <h2 className={subtitle({ class: "mt-4" })}>
+            8 criadoras de conteúdo
+          </h2> */}
         </div>
 
-        <div className="mt-8">
+        {/* <div className="mt-8">
           <Snippet hideSymbol hideCopyButton variant="flat">
             <span>
               Get started by editing <Code color="primary">app/page.tsx</Code>
             </span>
           </Snippet>
-        </div>
+        </div> */}
       </section>
       <div className="flex flex-col justify-between">
         <section className="mb-32 text-center">
-          <h2 className={title({ size: "lg" })}>Top 8 Movies</h2>
+          <h2 className={title({ size: "lg" })}>10 criadoras de conteúdo</h2>
           <div className="grid px-5 mt-4 lg:gap-xl-12 gap-x-6 md:grid-cols-2 lg:grid-cols-4">
             {movies.map(
               (movie: {
