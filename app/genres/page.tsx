@@ -59,17 +59,17 @@ interface Movie {
   };
 }
 export default async function Movies() {
-  const movies: Movie[] = await getMovies();
+  // const movies: Movie[] = await getMovies();
   //console.log(movies);
-  const genres = [
-    ...new Set(
-      movies.map((movie: Movie) => movie.federateMovie.data.Genre.split(",")[0])
-    ),
-  ];
+  // const genres = [
+  //   ...new Set(
+  //     movies.map((movie: Movie) => movie.federateMovie.data.Genre.split(",")[0])
+  //   ),
+  // ];
   return (
     <section className="flex flex-col justify-between mb-32 text-center">
       <h1 className={title({ size: "xl" })}>Movies by Genres</h1>
-      {genres.map((genre) => (
+      {/* {genres.map((genre) => (
         <div className="text-left" key={genre}>
           <h2 className={`${subtitle()} text-lg font-bold my-8`}>{genre}</h2>
           <div className="grid px-5 lg:gap-xl-12 gap-x-6 md:grid-cols-2 lg:grid-cols-4">
@@ -93,7 +93,7 @@ export default async function Movies() {
               ))}
           </div>
         </div>
-      ))}
+      ))} */}
     </section>
   );
 }
