@@ -1,9 +1,10 @@
-//Homepage with movies: app/page.js
-import { title } from '@/components/primitives'
-import { Movie } from '@/types/types'
+// Homepage with movies: app/page.js
 import MovieCard from '@/components/MovieCard'
+import { title } from '@/components/primitives'
 
-//Get all Movies
+import { Movie } from '@/types/types'
+
+// Get all Movies
 
 async function getMovies() {
   const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
@@ -44,7 +45,7 @@ async function getMovies() {
 
 export default async function Movies() {
   const movies: Movie[] = await getMovies()
-  //console.log(movies);
+  // console.log(movies);
   return (
     <main className="flex flex-col justify-between">
       <section className="mb-32 text-center">

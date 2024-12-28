@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { MovieHeroProps } from '@/types/types'
 
 const MovieHero: React.FC<MovieHeroProps> = ({

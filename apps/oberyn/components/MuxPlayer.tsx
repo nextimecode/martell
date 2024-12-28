@@ -1,6 +1,7 @@
 'use client'
-//Mux player component
+// Mux player component
 import React from 'react'
+
 import MuxPlayer from '@mux/mux-player-react'
 interface MuxPlayerProps {
   playbackId: string

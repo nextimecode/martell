@@ -1,12 +1,17 @@
 import '@/styles/globals.css'
+import { Link } from '@nextui-org/link'
 import { Metadata } from 'next'
 import { Viewport } from 'next'
-import { siteConfig } from '@/config/site'
-import { fontSans } from '@/config/fonts'
-import { Providers } from './providers'
+
 import { Navbar } from '@/components/navbar'
-import { Link } from '@nextui-org/link'
+
 import clsx from 'clsx'
+
+import { fontSans } from '@/config/fonts'
+import { siteConfig } from '@/config/site'
+
+import { Providers } from './providers'
+import { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +40,7 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <html lang="en" suppressHydrationWarning>

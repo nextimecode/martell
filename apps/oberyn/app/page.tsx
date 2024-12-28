@@ -1,13 +1,15 @@
+import { Code } from '@nextui-org/code'
 import { Link } from '@nextui-org/link'
 import { Snippet } from '@nextui-org/snippet'
-import { Code } from '@nextui-org/code'
 import { button as buttonStyles } from '@nextui-org/theme'
-import { siteConfig } from '@/config/site'
-import { title, subtitle } from '@/components/primitives'
+
 import { GithubIcon } from '@/components/icons'
 import MovieCard from '@/components/MovieCard'
+import { title, subtitle } from '@/components/primitives'
 
-//Get featured Movies
+import { siteConfig } from '@/config/site'
+
+// Get featured Movies
 
 async function getFeaturedMovies() {
   const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
@@ -50,7 +52,7 @@ async function getFeaturedMovies() {
 
 export default async function Home() {
   const movies = await getFeaturedMovies()
-  console.log(movies)
+
   return (
     <>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">

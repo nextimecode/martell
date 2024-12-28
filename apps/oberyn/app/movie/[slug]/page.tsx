@@ -1,4 +1,4 @@
-//Movie individual page: app/artist/[slug]/page.tsx
+// Movie individual page: app/artist/[slug]/page.tsx
 import MovieHero from '@/components/MovieHero'
 import MuxPlayerComponent from '@/components/MuxPlayer'
 
@@ -47,10 +47,9 @@ async function getMovie(slug: string) {
     })
 
     const data = await response.json()
-    console.log(data.data.movie)
+
     return data.data.movie
   } catch (error) {
-    console.error(error)
     return null
   }
 }

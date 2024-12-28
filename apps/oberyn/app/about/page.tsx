@@ -1,6 +1,7 @@
-import { title } from '@/components/primitives'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+
+import { title } from '@/components/primitives'
 
 export default function AboutPage() {
   return (

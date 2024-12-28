@@ -1,9 +1,9 @@
-//Landing page for movies by genre: app/page.js
+// Landing page for movies by genre: app/page.js
 
 import MovieCard from '@/components/MovieCard'
 import { subtitle, title } from '@/components/primitives'
 
-//Get all Movie data from Hygraph & OMDB
+// Get all Movie data from Hygraph & OMDB
 async function getMovies() {
   const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
   if (!HYGRAPH_ENDPOINT) {
@@ -60,7 +60,7 @@ interface Movie {
 }
 export default async function Movies() {
   // const movies: Movie[] = await getMovies();
-  //console.log(movies);
+  // console.log(movies);
   // const genres = [
   //   ...new Set(
   //     movies.map((movie: Movie) => movie.federateMovie.data.Genre.split(",")[0])
