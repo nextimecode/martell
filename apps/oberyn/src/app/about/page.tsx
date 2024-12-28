@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { title } from '@/src/components/primitives'
+import { title } from '@/components/primitives'
 
 export default function AboutPage() {
   return (
