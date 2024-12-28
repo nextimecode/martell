@@ -2,8 +2,10 @@
 import MovieHero from '@/components/MovieHero'
 import MuxPlayerComponent from '@/components/MuxPlayer'
 
+import { env } from '@/env'
+
 async function getMovie(slug: string) {
-  const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
+  const HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
 
   if (!HYGRAPH_ENDPOINT) {
     throw new Error('HYGRAPH_ENDPOINT is not defined')

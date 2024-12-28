@@ -11,7 +11,8 @@ import { Movie } from '@/types'
 async function getMovies() {
   console.log('HYGRAPH_ENDPOINT:', process.env.HYGRAPH_ENDPOINT)
   const HYGRAPH_ENDPOINT =
-  process.env.HYGRAPH_ENDPOINT || 'https://us-west-2.cdn.hygraph.com/content/default_fallback';
+    process.env.HYGRAPH_ENDPOINT ||
+    'https://us-west-2.cdn.hygraph.com/content/default_fallback'
 
   if (!HYGRAPH_ENDPOINT) {
     throw new Error('HYGRAPH_ENDPOINT is not defined')
