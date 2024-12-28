@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 // Homepage with movies: app/page.js
 import MovieCard from '@/components/MovieCard'
 import { title } from '@/components/primitives'
@@ -7,6 +9,7 @@ import { Movie } from '@/types'
 // Get all Movies
 
 async function getMovies() {
+  console.log('HYGRAPH_ENDPOINT:', process.env.HYGRAPH_ENDPOINT)
   const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
   if (!HYGRAPH_ENDPOINT) {
     throw new Error('HYGRAPH_ENDPOINT is not defined')
