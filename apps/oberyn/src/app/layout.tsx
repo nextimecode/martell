@@ -7,8 +7,6 @@ import { Viewport } from 'next'
 
 // import { Navbar } from '@/components/navbar'
 
-import packageInfo from '../../package.json'
-
 const version = packageInfo.version
 
 import clsx from 'clsx'
@@ -16,6 +14,7 @@ import clsx from 'clsx'
 import { fontSans } from '@/config/fonts'
 import { siteConfig } from '@/config/site'
 
+import packageInfo from '../../package.json'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
@@ -65,8 +64,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 href="https://www.nextime.com.br/"
                 title="Hygraph homepage"
               > */}
-                <span className="text-default-600">Copyright © {new Date().getFullYear()} | NeXTfans | v.{version}</span>
-                {/* <p className="text-primary">1.0.0</p> */}
+              <span className="text-default-600">
+                Copyright © {new Date().getFullYear()} | NeXTfans | v.{version}
+              </span>
+              {/* <p className="text-primary">1.0.0</p> */}
               {/* </Link> */}
             </footer>
           </div>
