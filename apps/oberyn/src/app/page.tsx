@@ -61,7 +61,7 @@ export default async function Home() {
             NeXTFANS&nbsp;
           </h1>
           <br />
-          <h2 className={title({ size: 'sm' })}>Uma assinatura</h2>
+          <h2 className={title({ size: 'sm' })}>Uma assinatura, acesso total a </h2>
           {/* <h2 className={subtitle({ class: "mt-4" })}>
             8 criadoras de conteúdo
           </h2> */}
