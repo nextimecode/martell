@@ -1,4 +1,6 @@
 import '@/styles/globals.css'
+import { ReactNode } from 'react'
+
 import { Link } from '@nextui-org/link'
 import { Metadata } from 'next'
 import { Viewport } from 'next'
@@ -11,7 +13,6 @@ import { fontSans } from '@/config/fonts'
 import { siteConfig } from '@/config/site'
 
 import { Providers } from './providers'
-import { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: {
@@ -37,11 +38,7 @@ export const viewport: Viewport = {
   ]
 }
 
-export default function RootLayout({
-  children
-}: {
-  children: ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
