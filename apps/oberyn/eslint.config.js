@@ -37,6 +37,7 @@ export default [
       perfectionist: perfectionistPlugin,
       next: nextPlugin
     },
+    ignores: ['node_modules/', 'dist/', 'build/'],
     rules: {
       'space-before-blocks': 'error',
       'keyword-spacing': 'error',
