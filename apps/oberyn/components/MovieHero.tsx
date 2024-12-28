@@ -1,5 +1,5 @@
-import React from "react";
-import { MovieHeroProps } from "@/types/types";
+import React from 'react'
+import { MovieHeroProps } from '@/types/types'
 
 const MovieHero: React.FC<MovieHeroProps> = ({
   Title,
@@ -9,7 +9,7 @@ const MovieHero: React.FC<MovieHeroProps> = ({
   Director,
   Rated,
   Runtime,
-  Year,
+  Year
 }) => {
   return (
     <div className="flex flex-col gap-10 p-10 md:flex-row">
@@ -43,7 +43,7 @@ const MovieHero: React.FC<MovieHeroProps> = ({
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MovieHero;
+export default MovieHero

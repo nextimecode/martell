@@ -26,7 +26,15 @@
     "apps/*/.cache": true,
     "apps/*/build": true
   },
-  "cSpell.words": ["arya", "datatables", "oberyn", "unsplash"],
+  "cSpell.words": [
+    "arya",
+    "datatables",
+    "Martell",
+    "messageformat",
+    "nextui",
+    "oberyn",
+    "unsplash"
+  ],
   "git.ignoreLimitWarning": true,
   "js/ts.implicitProjectConfig.checkJs": true,
   "javascript.validate.enable": false,

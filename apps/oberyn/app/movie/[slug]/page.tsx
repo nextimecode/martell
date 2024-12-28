@@ -1,19 +1,19 @@
 //Movie individual page: app/artist/[slug]/page.tsx
-import MovieHero from "@/components/MovieHero";
-import MuxPlayerComponent from "@/components/MuxPlayer";
+import MovieHero from '@/components/MovieHero'
+import MuxPlayerComponent from '@/components/MuxPlayer'
 
 async function getMovie(slug: string) {
-  const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT;
+  const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
 
   if (!HYGRAPH_ENDPOINT) {
-    throw new Error("HYGRAPH_ENDPOINT is not defined");
+    throw new Error('HYGRAPH_ENDPOINT is not defined')
   }
 
   try {
     const response = await fetch(HYGRAPH_ENDPOINT, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         query: `
@@ -41,34 +41,34 @@ async function getMovie(slug: string) {
               }
             }`,
         variables: {
-          slug: slug,
-        },
-      }),
-    });
+          slug: slug
+        }
+      })
+    })
 
-    const data = await response.json();
-    console.log(data.data.movie);
-    return data.data.movie;
+    const data = await response.json()
+    console.log(data.data.movie)
+    return data.data.movie
   } catch (error) {
-    console.error(error);
-    return null;
+    console.error(error)
+    return null
   }
 }
 
 export default async function Movie({
-  params,
+  params
 }: {
   params: Promise<{ slug: string }>
 }) {
   const slug = (await params).slug
-  const movieData = await getMovie(slug);
-  const playbackId = movieData.muxMovie?.playbackId;
+  const movieData = await getMovie(slug)
+  const playbackId = movieData.muxMovie?.playbackId
   if (!playbackId) {
-    return <p>Playback ID not found for this movie.</p>;
+    return <p>Playback ID not found for this movie.</p>
   }
 
   if (!movieData) {
-    return <p>Movie data not found.</p>;
+    return <p>Movie data not found.</p>
   }
 
   return (
@@ -85,5 +85,5 @@ export default async function Movie({
         Year={movieData.federateMovie.data.Year}
       />
     </div>
-  );
+  )
 }

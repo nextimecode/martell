@@ -1,6 +1,6 @@
-import { title } from "@/components/primitives";
-import Link from "next/link";
-import Image from "next/image";
+import { title } from '@/components/primitives'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function AboutPage() {
   return (
@@ -66,7 +66,7 @@ export default function AboutPage() {
           and schema
         </li>
         <li>
-          Add the endpoint to <code>.env.local</code> as{" "}
+          Add the endpoint to <code>.env.local</code> as{' '}
           <code>HYGRAPH_ENDPOINT</code>
         </li>
         <li>
@@ -100,5 +100,5 @@ export default function AboutPage() {
         </li>
       </ol>
     </div>
-  );
+  )
 }

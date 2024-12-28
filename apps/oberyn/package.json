@@ -1,11 +1,11 @@
 {
-  "name": "martell",
+  "name": "oberyn",
   "version": "1.0.0",
   "private": false,
   "author": {
     "name": "NeXTIME"
   },
-  "description": "Insubmissos, imbatíveis, inquebráveis: este projeto inspirado na Casa Nymeros Martell de Lançassolar traz a essência da exclusividade e resiliência de Dorne. Uma plataforma única que une conteúdo premium e inovação tecnológica, projetada para atender aos mais exigentes padrões de qualidade e segurança. O sol de Dorne brilha intensamente aqui!",
+  "description": "Parte logada do app - Oberyn, inspirado em Oberyn Martell, reflete ousadia, paixão e busca pela excelência. Este projeto representa a força e a agilidade da área logada, desenvolvida para oferecer uma experiência fluida, rica em funcionalidades e com design inovador, garantindo qualidade e segurança à altura das expectativas mais elevadas.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

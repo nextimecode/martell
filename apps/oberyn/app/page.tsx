@@ -1,23 +1,23 @@
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
-import MovieCard from "@/components/MovieCard";
+import { Link } from '@nextui-org/link'
+import { Snippet } from '@nextui-org/snippet'
+import { Code } from '@nextui-org/code'
+import { button as buttonStyles } from '@nextui-org/theme'
+import { siteConfig } from '@/config/site'
+import { title, subtitle } from '@/components/primitives'
+import { GithubIcon } from '@/components/icons'
+import MovieCard from '@/components/MovieCard'
 
 //Get featured Movies
 
 async function getFeaturedMovies() {
-  const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT;
+  const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
   if (!HYGRAPH_ENDPOINT) {
-    throw new Error("HYGRAPH_ENDPOINT is not defined");
+    throw new Error('HYGRAPH_ENDPOINT is not defined')
   }
   const response = await fetch(HYGRAPH_ENDPOINT, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       query: `
@@ -41,25 +41,25 @@ async function getFeaturedMovies() {
 				url
 			  }
 			}
-		}`,
-    }),
-  });
-  const json = await response.json();
-  return json.data.movies;
+		}`
+    })
+  })
+  const json = await response.json()
+  return json.data.movies
 }
 
 export default async function Home() {
-  const movies = await getFeaturedMovies();
-  console.log(movies);
+  const movies = await getFeaturedMovies()
+  console.log(movies)
   return (
     <>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="justify-center inline-block max-w-lg text-center">
-          <h1 className={title({ color: "violet", size: "jumbo" })}>
+          <h1 className={title({ color: 'violet', size: 'jumbo' })}>
             NeXTFANS&nbsp;
           </h1>
           <br />
-          <h2 className={title({ size: "sm" })}>Uma assinatura</h2>
+          <h2 className={title({ size: 'sm' })}>Uma assinatura</h2>
           {/* <h2 className={subtitle({ class: "mt-4" })}>
             8 criadoras de conteúdo
           </h2> */}
@@ -75,28 +75,28 @@ export default async function Home() {
       </section>
       <div className="flex flex-col justify-between">
         <section className="mb-32 text-center">
-          <h2 className={title({ size: "lg" })}>10 criadoras de conteúdo</h2>
+          <h2 className={title({ size: 'lg' })}>10 criadoras de conteúdo</h2>
           <div className="grid px-5 mt-4 lg:gap-xl-12 gap-x-6 md:grid-cols-2 lg:grid-cols-4">
             {movies.map(
               (movie: {
-                id: string;
+                id: string
                 federateMovie: {
                   data: {
-                    Title: string;
-                    Poster: string;
-                    alt: string;
-                    Genre: string;
-                    Director: string;
-                  };
-                };
-                slug: string;
-                title: string;
-                subtitle: string;
+                    Title: string
+                    Poster: string
+                    alt: string
+                    Genre: string
+                    Director: string
+                  }
+                }
+                slug: string
+                title: string
+                subtitle: string
                 moviePoster: {
-                  height: number;
-                  width: number;
-                  url: string;
-                };
+                  height: number
+                  width: number
+                  url: string
+                }
               }) => (
                 <MovieCard
                   key={movie.id}
@@ -114,5 +114,5 @@ export default async function Home() {
         </section>
       </div>
     </>
-  );
+  )
 }

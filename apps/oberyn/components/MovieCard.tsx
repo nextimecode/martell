@@ -1,8 +1,8 @@
-import React from "react";
-import Link from "next/link";
-import { Card, CardHeader, CardBody } from "@nextui-org/react";
-import { MovieCardProps } from "@/types/types";
-import Image from "next/image";
+import React from 'react'
+import Link from 'next/link'
+import { Card, CardHeader, CardBody } from '@nextui-org/react'
+import { MovieCardProps } from '@/types/types'
+import Image from 'next/image'
 
 const MovieCard: React.FC<MovieCardProps> = ({
   Poster,
@@ -10,7 +10,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
   Title,
   Genre,
   Director,
-  slug,
+  slug
 }) => {
   return (
     <Link href={`/movie/${slug}`}>
@@ -31,7 +31,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
         </CardBody>
       </Card>
     </Link>
-  );
-};
+  )
+}
 
-export default MovieCard;
+export default MovieCard
