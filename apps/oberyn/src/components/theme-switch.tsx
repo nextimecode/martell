@@ -5,7 +5,7 @@ import { FC } from 'react'
 import { SwitchProps, useSwitch } from '@nextui-org/switch'
 import { useTheme } from 'next-themes'
 
-import { SunFilledIcon, MoonFilledIcon } from '@/src/components/icons'
+import { SunFilledIcon, MoonFilledIcon } from '@/components/icons'
 
 import { useIsSSR } from '@react-aria/ssr'
 import { VisuallyHidden } from '@react-aria/visually-hidden'

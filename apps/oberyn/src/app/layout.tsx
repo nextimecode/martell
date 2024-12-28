@@ -5,12 +5,12 @@ import { Link } from '@nextui-org/link'
 import { Metadata } from 'next'
 import { Viewport } from 'next'
 
-import { Navbar } from '@/src/components/navbar'
+import { Navbar } from '@/components/navbar'
 
 import clsx from 'clsx'
 
-import { fontSans } from '@/src/config/fonts'
-import { siteConfig } from '@/src/config/site'
+import { fontSans } from '@/config/fonts'
+import { siteConfig } from '@/config/site'
 
 import { Providers } from './providers'
 

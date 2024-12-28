@@ -1,13 +1,13 @@
-import { Code } from '@nextui-org/code'
-import { Link } from '@nextui-org/link'
-import { Snippet } from '@nextui-org/snippet'
-import { button as buttonStyles } from '@nextui-org/theme'
+// import { Code } from '@nextui-org/code'
+// import { Link } from '@nextui-org/link'
+// import { Snippet } from '@nextui-org/snippet'
+// import { button as buttonStyles } from '@nextui-org/theme'
 
-import { GithubIcon } from '@/src/components/icons'
-import MovieCard from '@/src/components/MovieCard'
-import { title, subtitle } from '@/src/components/primitives'
+// import { GithubIcon } from '@/components/icons'
+import MovieCard from '@/components/MovieCard'
+import { title } from '@/components/primitives'
 
-import { siteConfig } from '@/src/config/site'
+// import { siteConfig } from '@/config/site'
 
 // Get featured Movies
 

@@ -6,7 +6,7 @@ import { NextUIProvider } from '@nextui-org/system'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { useRouter } from 'next/navigation'
 
-import { ProvidersProps } from '@/src/types/types'
+import { ProvidersProps } from '@/types'
 
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter()

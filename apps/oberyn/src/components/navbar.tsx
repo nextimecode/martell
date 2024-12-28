@@ -13,13 +13,13 @@ import {
 import { link as linkStyles } from '@nextui-org/theme'
 import NextLink from 'next/link'
 
-import { TwitterIcon, GithubIcon, SearchIcon } from '@/src/components/icons'
-import { Logo } from '@/src/components/icons'
-import { ThemeSwitch } from '@/src/components/theme-switch'
+import { SearchIcon } from '@/components/icons'
+// import { Logo } from '@/components/icons'
+import { ThemeSwitch } from '@/components/theme-switch'
 
 import clsx from 'clsx'
 
-import { siteConfig } from '@/src/config/site'
+import { siteConfig } from '@/config/site'
 
 export const Navbar = () => {
   const searchInput = (
