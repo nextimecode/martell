@@ -1,17 +1,20 @@
 import '@/styles/globals.css'
 import { ReactNode } from 'react'
 
-import { Link } from '@nextui-org/link'
+// import { Link } from '@nextui-org/link'
 import { Metadata } from 'next'
 import { Viewport } from 'next'
 
-import { Navbar } from '@/components/navbar'
+// import { Navbar } from '@/components/navbar'
+
+const version = packageInfo.version
 
 import clsx from 'clsx'
 
 import { fontSans } from '@/config/fonts'
 import { siteConfig } from '@/config/site'
 
+import packageInfo from '../../package.json'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
@@ -50,20 +53,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className="relative flex flex-col h-screen">
-            <Navbar />
+            {/* <Navbar /> */}
             <main className="container flex-grow px-6 pt-16 mx-auto max-w-7xl">
               {children}
             </main>
             <footer className="flex items-center justify-center w-full py-3">
-              <Link
+              {/* <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
                 href="https://www.nextime.com.br/"
                 title="Hygraph homepage"
-              >
-                <span className="text-default-600">Desenvolvido por</span>
-                <p className="text-primary">NeXTIME</p>
-              </Link>
+              > */}
+              <span className="text-default-600">
+                Copyright © {new Date().getFullYear()} | NeXTfans | v.{version}
+              </span>
+              {/* <p className="text-primary">1.0.0</p> */}
+              {/* </Link> */}
             </footer>
           </div>
         </Providers>

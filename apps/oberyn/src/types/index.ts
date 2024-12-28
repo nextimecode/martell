@@ -1,6 +1,7 @@
-import { SVGProps } from 'react'
-import { ThemeProvider } from 'next-themes'
+import { ReactNode, SVGProps } from 'react'
 import { ComponentProps } from 'react'
+
+import { ThemeProvider } from 'next-themes'
 
 type ThemeProviderProps = ComponentProps<typeof ThemeProvider>
 export interface Movie {
@@ -27,7 +28,7 @@ export interface MuxPlayerProps {
 
 export type MovieHeroProps = {
   Title: string
-  //Poster: string;
+  // Poster: string;
   Plot: string
   Actors: string
   Director: string
@@ -55,6 +56,6 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number
 }
 export interface ProvidersProps {
-  children: React.ReactNode
+  children: ReactNode
   themeProps?: ThemeProviderProps
 }

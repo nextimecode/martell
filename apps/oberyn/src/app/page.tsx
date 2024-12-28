@@ -1,13 +1,13 @@
-import { Code } from '@nextui-org/code'
-import { Link } from '@nextui-org/link'
-import { Snippet } from '@nextui-org/snippet'
-import { button as buttonStyles } from '@nextui-org/theme'
+// import { Code } from '@nextui-org/code'
+// import { Link } from '@nextui-org/link'
+// import { Snippet } from '@nextui-org/snippet'
+// import { button as buttonStyles } from '@nextui-org/theme'
 
-import { GithubIcon } from '@/components/icons'
+// import { GithubIcon } from '@/components/icons'
 import MovieCard from '@/components/MovieCard'
-import { title, subtitle } from '@/components/primitives'
+import { title } from '@/components/primitives'
 
-import { siteConfig } from '@/config/site'
+// import { siteConfig } from '@/config/site'
 
 // Get featured Movies
 
@@ -61,7 +61,9 @@ export default async function Home() {
             NeXTFANS&nbsp;
           </h1>
           <br />
-          <h2 className={title({ size: 'sm' })}>Uma assinatura</h2>
+          <h2 className={title({ size: 'sm' })}>
+            Uma assinatura, acesso total a{' '}
+          </h2>
           {/* <h2 className={subtitle({ class: "mt-4" })}>
             8 criadoras de conteúdo
           </h2> */}

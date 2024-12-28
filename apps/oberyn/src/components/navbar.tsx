@@ -13,8 +13,8 @@ import {
 import { link as linkStyles } from '@nextui-org/theme'
 import NextLink from 'next/link'
 
-import { TwitterIcon, GithubIcon, SearchIcon } from '@/components/icons'
-import { Logo } from '@/components/icons'
+import { SearchIcon } from '@/components/icons'
+// import { Logo } from '@/components/icons'
 import { ThemeSwitch } from '@/components/theme-switch'
 
 import clsx from 'clsx'

@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: 'Hygraphlix',
-  description: 'A movie streaming platform',
+  name: 'NeXTfans',
+  description: '',
   navItems: [
     // {
     // 	label: "Movies",

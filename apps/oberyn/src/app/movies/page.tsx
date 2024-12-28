@@ -2,7 +2,7 @@
 import MovieCard from '@/components/MovieCard'
 import { title } from '@/components/primitives'
 
-import { Movie } from '@/types/types'
+import { Movie } from '@/types'
 
 // Get all Movies
 
