@@ -1,0 +1,23 @@
+{
+  "name": "oberyn",
+  "version": "1.0.0",
+  "private": false,
+  "author": {
+    "name": "NeXTIME"
+  },
+  "description": "Parte logada do app - Oberyn, inspirado em Oberyn Martell, reflete ousadia, paixão e busca pela excelência. Este projeto representa a força e a agilidade da área logada, desenvolvida para oferecer uma experiência fluida, rica em funcionalidades e com design inovador, garantindo qualidade e segurança à altura das expectativas mais elevadas.",
+  "scripts": {
+    "dev": "rm -rf .next && next dev --port 3001",
+    "clean": "rm -rf .turbo .next dist node_modules pnpm-lock.yaml",
+    "build": "next build",
+    "start": "next start --port 3001",
+    "lint": "next lint --fix",
+    "e2e": "pnpm exec playwright test",
+    "e2e:ui": "pnpm exec playwright test --ui",
+    "e2e:chromium": "pnpm exec playwright test --project=chromium",
+    "e2e:debug": "pnpm exec playwright test --debug",
+    "e2e:codegen": "pnpm exec playwright codegen",
+    "e2e:report": "pnpm exec playwright show-report",
+    "typecheck": "tsc --noEmit"
+  }
+}
