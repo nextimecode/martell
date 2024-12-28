@@ -1,6 +1,6 @@
 // Movie individual page: app/artist/[slug]/page.tsx
-import MovieHero from '@/components/MovieHero'
-import MuxPlayerComponent from '@/components/MuxPlayer'
+import MovieHero from '@/src/components/MovieHero'
+import MuxPlayerComponent from '@/src/components/MuxPlayer'
 
 async function getMovie(slug: string) {
   const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT

@@ -4,7 +4,7 @@ import { Card, CardHeader, CardBody } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { MovieCardProps } from '@/types/types'
+import { MovieCardProps } from '@/src/types/types'
 
 const MovieCard: React.FC<MovieCardProps> = ({
   Poster,

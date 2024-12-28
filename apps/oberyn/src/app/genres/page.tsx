@@ -1,7 +1,7 @@
 // Landing page for movies by genre: app/page.js
 
-import MovieCard from '@/components/MovieCard'
-import { subtitle, title } from '@/components/primitives'
+import MovieCard from '@/src/components/MovieCard'
+import { subtitle, title } from '@/src/components/primitives'
 
 // Get all Movie data from Hygraph & OMDB
 async function getMovies() {

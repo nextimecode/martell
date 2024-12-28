@@ -1,8 +1,8 @@
 // Homepage with movies: app/page.js
-import MovieCard from '@/components/MovieCard'
-import { title } from '@/components/primitives'
+import MovieCard from '@/src/components/MovieCard'
+import { title } from '@/src/components/primitives'
 
-import { Movie } from '@/types/types'
+import { Movie } from '@/src/types/types'
 
 // Get all Movies
 

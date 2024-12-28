@@ -24,6 +24,14 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/movie/[slug]/page.tsx", "app/movies/page.tsx", "app/genres/page.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/movie/[slug]/page.tsx",
+    "src/app/movies/page.tsx",
+    "src/app/genres/page.tsx"
+  ],
   "exclude": ["node_modules"]
 }

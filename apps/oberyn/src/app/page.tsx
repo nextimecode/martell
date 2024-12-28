@@ -3,11 +3,11 @@ import { Link } from '@nextui-org/link'
 import { Snippet } from '@nextui-org/snippet'
 import { button as buttonStyles } from '@nextui-org/theme'
 
-import { GithubIcon } from '@/components/icons'
-import MovieCard from '@/components/MovieCard'
-import { title, subtitle } from '@/components/primitives'
+import { GithubIcon } from '@/src/components/icons'
+import MovieCard from '@/src/components/MovieCard'
+import { title, subtitle } from '@/src/components/primitives'
 
-import { siteConfig } from '@/config/site'
+import { siteConfig } from '@/src/config/site'
 
 // Get featured Movies
 
