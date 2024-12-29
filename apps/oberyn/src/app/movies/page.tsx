@@ -1,23 +1,23 @@
-/* eslint-disable no-console */
-
 // Homepage with movies: app/page.js
+
 import MovieCard from '@/components/MovieCard'
 import { title } from '@/components/primitives'
 
+import console from 'console'
+
+import { env } from '@/env'
 import { Movie } from '@/types'
 
 // Get all Movies
 
 async function getMovies() {
-  console.log('HYGRAPH_ENDPOINT:', process.env.HYGRAPH_ENDPOINT)
-  const HYGRAPH_ENDPOINT =
-    process.env.HYGRAPH_ENDPOINT ||
-    'https://us-west-2.cdn.hygraph.com/content/default_fallback'
+  console.log('HYGRAPH_ENDPOINT:', env.NEXT_PUBLIC_HYGRAPH_ENDPOINT)
+  const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
 
-  if (!HYGRAPH_ENDPOINT) {
+  if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {
     throw new Error('HYGRAPH_ENDPOINT is not defined')
   }
-  const response = await fetch(HYGRAPH_ENDPOINT, {
+  const response = await fetch(NEXT_PUBLIC_HYGRAPH_ENDPOINT, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

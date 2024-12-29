@@ -3,13 +3,15 @@
 import MovieCard from '@/components/MovieCard'
 import { subtitle, title } from '@/components/primitives'
 
-// Get all Movie data from Hygraph & OMDB
+import { env } from '@/env'
+
 async function getMovies() {
-  const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
-  if (!HYGRAPH_ENDPOINT) {
+  const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
+
+  if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {
     throw new Error('HYGRAPH_ENDPOINT is not defined')
   }
-  const response = await fetch(HYGRAPH_ENDPOINT, {
+  const response = await fetch(NEXT_PUBLIC_HYGRAPH_ENDPOINT, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

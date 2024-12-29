@@ -1,4 +1,5 @@
 // Movie individual page: app/artist/[slug]/page.tsx
+
 import MovieHero from '@/components/MovieHero'
 import MuxPlayerComponent from '@/components/MuxPlayer'
 

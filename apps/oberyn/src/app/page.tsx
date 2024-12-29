@@ -7,16 +7,18 @@
 import MovieCard from '@/components/MovieCard'
 import { title } from '@/components/primitives'
 
+import { env } from '@/env'
+
 // import { siteConfig } from '@/config/site'
 
 // Get featured Movies
 
 async function getFeaturedMovies() {
-  const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
-  if (!HYGRAPH_ENDPOINT) {
+  const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
+  if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {
     throw new Error('HYGRAPH_ENDPOINT is not defined')
   }
-  const response = await fetch(HYGRAPH_ENDPOINT, {
+  const response = await fetch(NEXT_PUBLIC_HYGRAPH_ENDPOINT, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
