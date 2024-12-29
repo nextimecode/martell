@@ -7,7 +7,7 @@ import prettierPlugin from 'eslint-plugin-prettier'
 import reactPlugin from 'eslint-plugin-react'
 import unicornPlugin from 'eslint-plugin-unicorn'
 import globals from 'globals'
-import nextPlugin from '@next/eslint-plugin-next';
+import nextPlugin from '@next/eslint-plugin-next'
 
 export default [
   {
@@ -69,7 +69,10 @@ export default [
           }
         }
       ],
-      "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+      'no-unused-vars': [
+        'error',
+        { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
+      ],
       'prettier/prettier': [
         'error',
         {
