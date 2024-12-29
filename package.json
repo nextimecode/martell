@@ -25,7 +25,6 @@
     "dev": "prisma generate && turbo run dev --parallel",
     "e2e": "turbo run e2e",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "postinstall": "husky",
     "lint": "turbo run lint --parallel",
     "oberyn:build": "turbo run build --filter oberyn",
     "oberyn:dev": "turbo run dev --filter oberyn",
