@@ -1,0 +1,5 @@
+if [ -f .git/MERGE_HEAD ]; then
+  echo "Skipping pre-commit hooks in MERGE_HEAD"
+else
+  pnpm lint-staged --no-stash
+fi

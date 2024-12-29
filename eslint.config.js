@@ -1,3 +1,5 @@
+import nextPlugin from '@next/eslint-plugin-next'
+
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import importHelpersPlugin from 'eslint-plugin-import-helpers'
@@ -33,11 +35,10 @@ export default [
       prettier: prettierPlugin,
       unicorn: unicornPlugin,
       'import-helpers': importHelpersPlugin,
-      perfectionist: perfectionistPlugin
+      perfectionist: perfectionistPlugin,
+      next: nextPlugin
     },
-    extends: [
-      'plugin:prettier/recommended'
-    ],
+    ignores: ['node_modules/', 'dist/', 'build/'],
     rules: {
       'space-before-blocks': 'error',
       'keyword-spacing': 'error',
@@ -47,7 +48,6 @@ export default [
       'no-console': 'error',
       'no-undef': 'error',
       'comma-dangle': 'off',
-      'quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }], // Aspas simples
       'import-helpers/order-imports': [
         'error',
         {
@@ -69,6 +69,10 @@ export default [
             ignoreCase: true
           }
         }
+      ],
+      'no-unused-vars': [
+        'error',
+        { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
       ],
       'prettier/prettier': [
         'error',
