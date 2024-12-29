@@ -69,6 +69,7 @@ export default [
           }
         }
       ],
+      "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
       'prettier/prettier': [
         'error',
         {
