@@ -5,14 +5,14 @@ import MuxPlayerComponent from '@/components/MuxPlayer'
 import { env } from '@/env'
 
 async function getMovie(slug: string) {
-  const HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
+  const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
 
-  if (!HYGRAPH_ENDPOINT) {
-    throw new Error('HYGRAPH_ENDPOINT is not defined')
+  if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {
+    throw new Error('NEXT_PUBLIC_HYGRAPH_ENDPOINT is not defined')
   }
 
   try {
-    const response = await fetch(HYGRAPH_ENDPOINT, {
+    const response = await fetch(NEXT_PUBLIC_HYGRAPH_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
