@@ -1,65 +1,65 @@
 // Landing page for movies by genre: app/page.js
 
-import MovieCard from '@/components/MovieCard'
-import { subtitle, title } from '@/components/primitives'
+// import MovieCard from '@/components/MovieCard'
+import { title } from '@/components/primitives'
 
-import { env } from '@/env'
+// import { env } from '@/env'
 
-async function getMovies() {
-  const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
+// async function getMovies() {
+//   const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
 
-  if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {
-    throw new Error('HYGRAPH_ENDPOINT is not defined')
-  }
-  const response = await fetch(NEXT_PUBLIC_HYGRAPH_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      query: `
-      query Movies {
-        movies(first: 100) {
-            federateMovie {
-              data {
-                Title
-                Poster
-                Genre
-                Director
-              }
-            }
-            id
-            slug
-            moviePoster {
-              height
-              width
-              url
-            }
-          }
-      }`
-    })
-  })
-  const json = await response.json()
-  return json.data.movies
-}
+//   if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {
+//     throw new Error('HYGRAPH_ENDPOINT is not defined')
+//   }
+//   const response = await fetch(NEXT_PUBLIC_HYGRAPH_ENDPOINT, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       query: `
+//       query Movies {
+//         movies(first: 100) {
+//             federateMovie {
+//               data {
+//                 Title
+//                 Poster
+//                 Genre
+//                 Director
+//               }
+//             }
+//             id
+//             slug
+//             moviePoster {
+//               height
+//               width
+//               url
+//             }
+//           }
+//       }`
+//     })
+//   })
+//   const json = await response.json()
+//   return json.data.movies
+// }
 // Declare Movie interface
-interface Movie {
-  federateMovie: {
-    data: {
-      Genre: string
-      Title: string
-      Poster: string
-      Director: string
-    }
-  }
-  id: string
-  slug: string
-  moviePoster: {
-    height: number
-    width: number
-    url: string
-  }
-}
+// interface Movie {
+//   federateMovie: {
+//     data: {
+//       Genre: string
+//       Title: string
+//       Poster: string
+//       Director: string
+//     }
+//   }
+//   id: string
+//   slug: string
+//   moviePoster: {
+//     height: number
+//     width: number
+//     url: string
+//   }
+// }
 export default async function Movies() {
   // const movies: Movie[] = await getMovies();
   // console.log(movies);

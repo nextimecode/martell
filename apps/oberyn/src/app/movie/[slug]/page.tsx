@@ -52,7 +52,7 @@ async function getMovie(slug: string) {
     const data = await response.json()
 
     return data.data.movie
-  } catch (error) {
+  } catch {
     return null
   }
 }
