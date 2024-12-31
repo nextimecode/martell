@@ -4,10 +4,10 @@
 // import { button as buttonStyles } from '@nextui-org/theme'
 
 // import { GithubIcon } from '@/components/icons'
-import MovieCard from '@/components/MovieCard'
+// import MovieCard from '@/components/MovieCard'
 import { title } from '@/components/primitives'
 
-import { env } from '@/env'
+// import { env } from '@/env'
 
 // import { siteConfig } from '@/config/site'
 

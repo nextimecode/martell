@@ -1,12 +1,12 @@
 // Homepage with movies: app/page.js
 
-import MovieCard from '@/components/MovieCard'
+// import MovieCard from '@/components/MovieCard'
 import { title } from '@/components/primitives'
 
-import console from 'console'
+// import console from 'console'
 
-import { env } from '@/env'
-import { Movie } from '@/types'
+// import { env } from '@/env'
+// import { Movie } from '@/types'
 
 // Get all Movies
 
