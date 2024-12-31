@@ -3,8 +3,6 @@
 // import MovieCard from '@/components/MovieCard'
 import { title } from '@/components/primitives'
 
-// import console from 'console'
-
 // import { env } from '@/env'
 // import { Movie } from '@/types'
 
@@ -51,7 +49,6 @@ import { title } from '@/components/primitives'
 
 export default async function Movies() {
   // const movies: Movie[] = await getMovies()
-  // console.log(movies);
   return (
     <main className="flex flex-col justify-between">
       <section className="mb-32 text-center">
