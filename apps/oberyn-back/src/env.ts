@@ -5,10 +5,10 @@ export const env = createEnv({
   server: {},
 
   client: {
-    NEXT_PUBLIC_API_URL: z.string().url()
+    NEXT_PUBLIC_HYGRAPH_ENDPOINT: z.string().url()
   },
 
   runtimeEnv: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL
+    NEXT_PUBLIC_HYGRAPH_ENDPOINT: process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
   }
 })

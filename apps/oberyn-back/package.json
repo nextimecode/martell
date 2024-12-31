@@ -1,8 +1,11 @@
 {
-  "name": "oberyn",
-  "version": "0.0.0-development",
+  "name": "oberyn-back",
+  "version": "1.0.0",
+  "private": false,
+  "author": {
+    "name": "NeXTIME"
+  },
   "description": "Parte logada do app - Oberyn, inspirado em Oberyn Martell, reflete ousadia, paixão e busca pela excelência. Este projeto representa a força e a agilidade da área logada, desenvolvida para oferecer uma experiência fluida, rica em funcionalidades e com design inovador, garantindo qualidade e segurança à altura das expectativas mais elevadas.",
-  "private": true,
   "scripts": {
     "dev": "rm -rf .next && next dev --port 3001",
     "clean": "rm -rf .turbo .next dist node_modules pnpm-lock.yaml",
