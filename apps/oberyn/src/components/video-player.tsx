@@ -1,46 +1,55 @@
-// src/components/VideoPlayer.tsx
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 interface VideoPlayerProps {
   src: string
+  token: string
 }
 
-export const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
+export function VideoPlayer({ src, token }: VideoPlayerProps) {
+  const [videoBlobUrl, setVideoBlobUrl] = useState<string | null>(null)
+
+  useEffect(() => {
+    const fetchVideo = async () => {
+      try {
+        const response = await fetch(src, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch video')
+        }
+
+        const videoBlob = await response.blob()
+        const blobUrl = URL.createObjectURL(videoBlob)
+        setVideoBlobUrl(blobUrl)
+
+        // Liberar o Blob antigo, se houver
+        return () => URL.revokeObjectURL(blobUrl)
+      } catch (error) {
+        console.error('Error fetching video:', error)
+      }
+    }
+
+    fetchVideo()
+  }, [src, token])
+
   return (
     <div>
-      <video
-        id="custom-video"
-        style={{ width: '100%', maxHeight: '500px' }}
-        disablePictureInPicture
-        controlsList="nodownload"
-      >
-        <source src={src} type="video/mp4" />
-        Seu navegador não suporta o elemento de vídeo.
-      </video>
-      <div style={{ marginTop: '10px' }}>
-        <button
-          onClick={() => {
-            const video = document.getElementById(
-              'custom-video'
-            ) as HTMLVideoElement
-            if (video) video.play()
-          }}
+      {videoBlobUrl ? (
+        <video
+          controls
+          style={{ width: '100%', maxHeight: '500px' }}
+          src={videoBlobUrl}
         >
-          Reproduzir
-        </button>
-        <button
-          onClick={() => {
-            const video = document.getElementById(
-              'custom-video'
-            ) as HTMLVideoElement
-            if (video) video.pause()
-          }}
-        >
-          Pausar
-        </button>
-      </div>
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+      ) : (
+        <p>Carregando vídeo...</p>
+      )}
     </div>
   )
 }
