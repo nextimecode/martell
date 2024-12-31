@@ -11,7 +11,7 @@ import { Movie } from '@/types'
 // Get all Movies
 
 async function getMovies() {
-  console.log('HYGRAPH_ENDPOINT:', env.NEXT_PUBLIC_HYGRAPH_ENDPOINT)
+  console.log('NEXT_PUBLIC_HYGRAPH_ENDPOINT:', env.NEXT_PUBLIC_HYGRAPH_ENDPOINT)
   const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
 
   if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {

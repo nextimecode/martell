@@ -14,9 +14,11 @@ import { env } from '@/env'
 // Get featured Movies
 
 async function getFeaturedMovies() {
+  // eslint-disable-next-line no-console
+  console.log('Env during build:', process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT)
   const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
   if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {
-    throw new Error('HYGRAPH_ENDPOINT is not defined')
+    throw new Error('NEXT_PUBLIC_HYGRAPH_ENDPOINT is not defined')
   }
   const response = await fetch(NEXT_PUBLIC_HYGRAPH_ENDPOINT, {
     method: 'POST',

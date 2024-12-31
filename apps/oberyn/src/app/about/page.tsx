@@ -44,7 +44,7 @@ export default function AboutPage() {
           />
         </Link>
         <p className="py-4 text-xl">Deploy to Vercel</p>
-        <Link href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flowisren%2Fhygraph-movie-starter&env=HYGRAPH_ENDPOINT">
+        <Link href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flowisren%2Fhygraph-movie-starter&env=NEXT_PUBLIC_HYGRAPH_ENDPOINT">
           <Image
             src="https://vercel.com/button"
             className="mb-4"
@@ -68,7 +68,7 @@ export default function AboutPage() {
         </li>
         <li>
           Add the endpoint to <code>.env.local</code> as{' '}
-          <code>HYGRAPH_ENDPOINT</code>
+          <code>NEXT_PUBLIC_HYGRAPH_ENDPOINT</code>
         </li>
         <li>
           Copy the .env.sample file, add your endpoint and save as .env.local in

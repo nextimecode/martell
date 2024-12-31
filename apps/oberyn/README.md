@@ -27,7 +27,7 @@ Option 2: Manual clone
 
 ## Running the project
 
-The project needs a Hygraph content API endpoint with matching content and schema. Add the endpoint to `.env.local` as `HYGRAPH_ENDPOINT`
+The project needs a Hygraph content API endpoint with matching content and schema. Add the endpoint to `.env.local` as `NEXT_PUBLIC_HYGRAPH_ENDPOINT`
 
 1. Copy the `.env.sample` file, add your endpoint and save as `.env.local` in the main project directory
 2. Run `npm run dev`
