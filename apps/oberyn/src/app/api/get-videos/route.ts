@@ -26,22 +26,20 @@ export async function GET(request: Request) {
     return new Response('No videos found', { status: 404 })
   }
 
-  const videoBlob = blobs[1]
+  const videoBlob = blobs[0]
   const videoUrl = videoBlob.url
 
-  const response = await fetch(videoUrl, {
-    headers: {
-      range
-    }
+  const videoResponse = await fetch(videoUrl, {
+    headers: { range }
   })
 
-  return new Response(response.body, {
-    status: response.status,
+  return new Response(videoResponse.body, {
+    status: videoResponse.status,
     headers: {
       'Content-Type': 'video/mp4',
-      'Content-Length': response.headers.get('content-length') || '',
+      'Content-Length': videoResponse.headers.get('content-length') || '',
       'Accept-Ranges': 'bytes',
-      'Content-Range': response.headers.get('content-range') || ''
+      'Content-Range': videoResponse.headers.get('content-range') || ''
     }
   })
 }

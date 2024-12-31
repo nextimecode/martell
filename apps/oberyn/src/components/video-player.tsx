@@ -11,6 +11,8 @@ export function VideoPlayer({ src, token }: VideoPlayerProps) {
   const [videoBlobUrl, setVideoBlobUrl] = useState<string | null>(null)
 
   useEffect(() => {
+    let currentBlobUrl: string | null = null
+
     const fetchVideo = async () => {
       try {
         const response = await fetch(src, {
@@ -24,17 +26,21 @@ export function VideoPlayer({ src, token }: VideoPlayerProps) {
         }
 
         const videoBlob = await response.blob()
-        const blobUrl = URL.createObjectURL(videoBlob)
-        setVideoBlobUrl(blobUrl)
-
-        // Liberar o Blob antigo, se houver
-        return () => URL.revokeObjectURL(blobUrl)
+        currentBlobUrl = URL.createObjectURL(videoBlob)
+        setVideoBlobUrl(currentBlobUrl)
       } catch (error) {
         console.error('Error fetching video:', error)
       }
     }
 
     fetchVideo()
+
+    return () => {
+      // Revoga o Blob quando o componente é desmontado
+      if (currentBlobUrl) {
+        URL.revokeObjectURL(currentBlobUrl)
+      }
+    }
   }, [src, token])
 
   return (
