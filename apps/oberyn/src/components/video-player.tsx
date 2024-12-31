@@ -8,11 +8,9 @@ interface VideoPlayerProps {
 }
 
 export function VideoPlayer({ src, token }: VideoPlayerProps) {
-  const [videoBlobUrl, setVideoBlobUrl] = useState<string | null>(null)
+  const [videoUrl, setVideoUrl] = useState<string | null>(null)
 
   useEffect(() => {
-    let currentBlobUrl: string | null = null
-
     const fetchVideo = async () => {
       try {
         const response = await fetch(src, {
@@ -22,40 +20,33 @@ export function VideoPlayer({ src, token }: VideoPlayerProps) {
         })
 
         if (!response.ok) {
-          throw new Error('Failed to fetch video')
+          throw new Error(`Failed to fetch video: ${response.statusText}`)
         }
 
-        const videoBlob = await response.blob()
-        currentBlobUrl = URL.createObjectURL(videoBlob)
-        setVideoBlobUrl(currentBlobUrl)
+        setVideoUrl(URL.createObjectURL(await response.blob()))
       } catch (error) {
-        console.error('Error fetching video:', error)
+        console.error(error)
       }
     }
 
     fetchVideo()
-
-    return () => {
-      // Revoga o Blob quando o componente é desmontado
-      if (currentBlobUrl) {
-        URL.revokeObjectURL(currentBlobUrl)
-      }
-    }
   }, [src, token])
+
+  if (!videoUrl) {
+    return <p>Loading video...</p>
+  }
 
   return (
     <div>
-      {videoBlobUrl ? (
-        <video
-          controls
-          style={{ width: '100%', maxHeight: '500px' }}
-          src={videoBlobUrl}
-        >
-          Seu navegador não suporta o elemento de vídeo.
-        </video>
-      ) : (
-        <p>Carregando vídeo...</p>
-      )}
+      <video
+        controls
+        style={{ width: '100%', maxHeight: '500px' }}
+        src={videoUrl}
+        autoPlay
+        preload="auto"
+      >
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
     </div>
   )
 }

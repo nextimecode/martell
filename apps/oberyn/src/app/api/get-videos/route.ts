@@ -4,19 +4,22 @@ import jwt from 'jsonwebtoken'
 const SECRET_KEY = process.env.JWT_SECRET || 'your-secret-key'
 
 export async function GET(request: Request) {
-  const authorizationHeader = request.headers.get('Authorization')
-  if (!authorizationHeader) {
-    return new Response('Unauthorized', { status: 401 })
-  }
+  // const authorizationHeader = request.headers.get('Authorization')
+  // if (!authorizationHeader) {
+  //   return new Response('Unauthorized', { status: 401 })
+  // }
 
-  const token = authorizationHeader.split(' ')[1]
-  try {
-    jwt.verify(token, SECRET_KEY)
-  } catch {
-    return new Response('Invalid token', { status: 403 })
-  }
+  // const token = authorizationHeader.split(' ')[1]
+  // try {
+  //   jwt.verify(token, SECRET_KEY) // Valida o token JWT
+  // } catch {
+  //   return new Response('Invalid token', { status: 403 })
+  // }
 
-  const range = request.headers.get('range') || ''
+  const rangeHeader = request.headers.get('Range')
+  if (!rangeHeader) {
+    return new Response('Range header required', { status: 416 }) // Range obrigatório
+  }
 
   const { blobs } = await list({
     prefix: 'ilahaina/videos/'
@@ -26,20 +29,24 @@ export async function GET(request: Request) {
     return new Response('No videos found', { status: 404 })
   }
 
-  const videoBlob = blobs[0]
+  const videoBlob = blobs[1]
   const videoUrl = videoBlob.url
 
-  const videoResponse = await fetch(videoUrl, {
-    headers: { range }
+  const response = await fetch(videoUrl, {
+    headers: {
+      Range: rangeHeader
+    }
   })
 
-  return new Response(videoResponse.body, {
-    status: videoResponse.status,
+  const status = response.status === 206 ? 206 : 200 // Certifica-se de que está retornando conteúdo parcial (206)
+
+  return new Response(response.body, {
+    status,
     headers: {
       'Content-Type': 'video/mp4',
-      'Content-Length': videoResponse.headers.get('content-length') || '',
-      'Accept-Ranges': 'bytes',
-      'Content-Range': videoResponse.headers.get('content-range') || ''
+      'Content-Length': response.headers.get('Content-Length') || '',
+      'Content-Range': response.headers.get('Content-Range') || '',
+      'Accept-Ranges': 'bytes'
     }
   })
 }
