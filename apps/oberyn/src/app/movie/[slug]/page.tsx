@@ -6,6 +6,7 @@ import MuxPlayerComponent from '@/components/MuxPlayer'
 import { env } from '@/env'
 
 async function getMovie(slug: string) {
+  console.log('Env during build:', process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT)
   const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
 
   if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {

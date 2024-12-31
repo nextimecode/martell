@@ -13,49 +13,49 @@ import { env } from '@/env'
 
 // Get featured Movies
 
-async function getFeaturedMovies() {
-  // eslint-disable-next-line no-console
-  console.log('Env during build:', process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT)
-  const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
-  if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {
-    throw new Error('NEXT_PUBLIC_HYGRAPH_ENDPOINT is not defined')
-  }
-  const response = await fetch(NEXT_PUBLIC_HYGRAPH_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      query: `
-		query Movies {
-		  movies(first: 8) {
-			  federateMovie {
-				data {
-				  Title
-				  Poster
-				  Genre
-				  Director
-				}
-			  }
-			  id
-			  slug
-        title
-        subtitle
-			  moviePoster {
-				height
-				width
-				url
-			  }
-			}
-		}`
-    })
-  })
-  const json = await response.json()
-  return json.data.movies
-}
+// async function getFeaturedMovies() {
+//   // eslint-disable-next-line no-console
+//   console.log('Env during build:', process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT)
+//   const NEXT_PUBLIC_HYGRAPH_ENDPOINT = env.NEXT_PUBLIC_HYGRAPH_ENDPOINT
+//   if (!NEXT_PUBLIC_HYGRAPH_ENDPOINT) {
+//     throw new Error('NEXT_PUBLIC_HYGRAPH_ENDPOINT is not defined')
+//   }
+//   const response = await fetch(NEXT_PUBLIC_HYGRAPH_ENDPOINT, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       query: `
+// 		query Movies {
+// 		  movies(first: 8) {
+// 			  federateMovie {
+// 				data {
+// 				  Title
+// 				  Poster
+// 				  Genre
+// 				  Director
+// 				}
+// 			  }
+// 			  id
+// 			  slug
+//         title
+//         subtitle
+// 			  moviePoster {
+// 				height
+// 				width
+// 				url
+// 			  }
+// 			}
+// 		}`
+//     })
+//   })
+//   const json = await response.json()
+//   return json.data.movies
+// }
 
 export default async function Home() {
-  const movies = await getFeaturedMovies()
+  // const movies = await getFeaturedMovies()
 
   return (
     <>
@@ -85,7 +85,7 @@ export default async function Home() {
         <section className="mb-32 text-center">
           <h2 className={title({ size: 'lg' })}>10 criadoras de conteúdo</h2>
           <div className="grid px-5 mt-4 lg:gap-xl-12 gap-x-6 md:grid-cols-2 lg:grid-cols-4">
-            {movies.map(
+            {/* {movies.map(
               (movie: {
                 id: string
                 federateMovie: {
@@ -117,7 +117,7 @@ export default async function Home() {
                   slug={movie.slug}
                 />
               )
-            )}
+            )} */}
           </div>
         </section>
       </div>
