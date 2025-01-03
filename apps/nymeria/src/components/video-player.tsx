@@ -24,9 +24,7 @@ export function VideoPlayer({ src, token }: VideoPlayerProps) {
         }
 
         setVideoUrl(URL.createObjectURL(await response.blob()))
-      } catch (error) {
-        console.error(error)
-      }
+      } catch {}
     }
 
     fetchVideo()
