@@ -1,8 +1,9 @@
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+/* eslint-disable no-unused-vars */
 
-import { storage } from "@/src/lib/firebase/clientApp";
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 
-import { updateRestaurantImageReference } from "@/src/lib/firebase/firestore";
+import { storage } from '@/src/lib/firebase/clientApp'
+import { updateRestaurantImageReference } from '@/src/lib/firebase/firestore'
 
 // Replace the two functions below
 export async function updateRestaurantImage(restaurantId, image) {}

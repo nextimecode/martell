@@ -1,23 +1,29 @@
 // This component handles the list of reviews for a given restaurant
 
-import React from "react";
-import { getReviewsByRestaurantId } from "@/src/lib/firebase/firestore.js";
-import ReviewsListClient from "@/src/components/Reviews/ReviewsListClient";
-import { ReviewSkeleton } from "@/src/components/Reviews/Review";
-import { getFirestore } from "firebase/firestore";
-import { getAuthenticatedAppForUser } from "@/src/lib/firebase/serverApp";
+import React from 'react'
+
+import { ReviewSkeleton } from '@/src/components/Reviews/Review'
+import ReviewsListClient from '@/src/components/Reviews/ReviewsListClient'
+
+import { getFirestore } from 'firebase/firestore'
+
+import { getReviewsByRestaurantId } from '@/src/lib/firebase/firestore.js'
+import { getAuthenticatedAppForUser } from '@/src/lib/firebase/serverApp'
 
 export default async function ReviewsList({ restaurantId, userId }) {
-  const {firebaseServerApp} = await getAuthenticatedAppForUser();
-  const reviews = await getReviewsByRestaurantId(getFirestore(firebaseServerApp), restaurantId);
-  
+  const { firebaseServerApp } = await getAuthenticatedAppForUser()
+  const reviews = await getReviewsByRestaurantId(
+    getFirestore(firebaseServerApp),
+    restaurantId
+  )
+
   return (
     <ReviewsListClient
       initialReviews={reviews}
       restaurantId={restaurantId}
       userId={userId}
     />
-  );
+  )
 }
 
 export function ReviewsListSkeleton({ numReviews }) {
@@ -33,5 +39,5 @@ export function ReviewsListSkeleton({ numReviews }) {
         </ul>
       </ul>
     </article>
-  );
+  )
 }

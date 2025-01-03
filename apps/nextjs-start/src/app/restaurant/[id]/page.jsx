@@ -1,30 +1,39 @@
-import Restaurant from "@/src/components/Restaurant.jsx";
-import { Suspense } from "react";
-import { getRestaurantById } from "@/src/lib/firebase/firestore.js";
-import { getAuthenticatedAppForUser, getAuthenticatedAppForUser as getUser } from "@/src/lib/firebase/serverApp.js";
+import { Suspense } from 'react'
+
+import Restaurant from '@/src/components/Restaurant.jsx'
 import ReviewsList, {
-  ReviewsListSkeleton,
-} from "@/src/components/Reviews/ReviewsList";
+  ReviewsListSkeleton
+} from '@/src/components/Reviews/ReviewsList'
 import {
   GeminiSummary,
-  GeminiSummarySkeleton,
-} from "@/src/components/Reviews/ReviewSummary";
-import { getFirestore } from "firebase/firestore";
+  GeminiSummarySkeleton
+} from '@/src/components/Reviews/ReviewSummary'
+
+import { getFirestore } from 'firebase/firestore'
+
+import { getRestaurantById } from '@/src/lib/firebase/firestore.js'
+import {
+  getAuthenticatedAppForUser,
+  getAuthenticatedAppForUser as getUser
+} from '@/src/lib/firebase/serverApp.js'
 
 export default async function Home({ params }) {
   // This is a server component, we can access URL
-	// parameters via Next.js and download the data
-	// we need for this page
-  const { currentUser } = await getUser();
-  const {firebaseServerApp} = await getAuthenticatedAppForUser();
-  const restaurant = await getRestaurantById(getFirestore(firebaseServerApp), params.id);
+  // parameters via Next.js and download the data
+  // we need for this page
+  const { currentUser } = await getUser()
+  const { firebaseServerApp } = await getAuthenticatedAppForUser()
+  const restaurant = await getRestaurantById(
+    getFirestore(firebaseServerApp),
+    params.id
+  )
 
   return (
     <main className="main__restaurant">
       <Restaurant
         id={params.id}
         initialRestaurant={restaurant}
-        initialUserId={currentUser?.uid || ""}
+        initialUserId={currentUser?.uid || ''}
       >
         <Suspense fallback={<GeminiSummarySkeleton />}>
           <GeminiSummary restaurantId={params.id} />
@@ -33,8 +42,8 @@ export default async function Home({ params }) {
       <Suspense
         fallback={<ReviewsListSkeleton numReviews={restaurant.numRatings} />}
       >
-        <ReviewsList restaurantId={params.id} userId={currentUser?.uid || ""} />
+        <ReviewsList restaurantId={params.id} userId={currentUser?.uid || ''} />
       </Suspense>
     </main>
-  );
+  )
 }
